@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Bored Activity</title>
+</head>
+<body>
+    <div class="container">
+        <h1>let's find something for you to do 😊</h1>
+        <form action="/" id="form" class="form" method="POST">
+            <select name="type" class="form-select">
+                <option value="" data-display="select">Random type</option>
+                <option value="education">Education</option>
+                <option value="charity">Charity</option>
+                <option value="recreational">Recreational</option>
+                <option value="busywork">Busywork</option>
+                <option value="social">Social</option>
+                <option value="diy">Diy</option>
+                <option value="music">Music</option>
+            </select>
+            <select name="participants" class="form-select">
+                <option value="">Any number of people</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+            <button type="submit" class="form-submit">Go</button>
+        </form>
+        <% if (data) { %>
+    <div class="card">
+        <h2><%= data.activity %></h2>
+        <p><span class="label">Type:</span> <%= data.type %></p>
+        <p><span class="label">Participants:</span> <%= data.participants %></p>
+        <p><span class="label">Duration:</span> <%= data.duration %></p>
+        <p><span class="label">Accessibility:</span> <%= data.accessibility %></p>
+        <p><span class="label">Kid Friendly:</span> <%= data.kidFriendly ? 'Yes' : 'No' %></p>
+        <p><span class="label">Price:</span> <%= data.price %></p>
+        <p><span class="label">Availability:</span> <%= data.availability %></p>
+        <% if (data.link) { %>
+            <p><span class="label">Link:</span> <a href="<%= data.link %>"><%= data.link %></a></p>
+        <% } %>
+        <div class="tag">Activity Key: <%= data.key %></div>
+    </div>
+    <% } else if (error) { %>
+        <div class="card">
+            <h2>Error</h2>
+            <p><%= error %></p>
+        </div>
+    <% } else { %>
+        <div class="card">
+            <h2>No Data</h2>
+            <p>No activity found yet.</p>
+        </div>
+    <% } %>
+    </div>
+    
+</body>
+</html>
