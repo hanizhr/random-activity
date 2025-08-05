@@ -8,7 +8,8 @@ Coming soon (you can deploy it to [Render](https://render.com), [Railway](https:
 
 ## 📸 Preview
 
-![App Screenshot](./public/preview.png) <!-- Add a real screenshot if you have one -->
+<img width="616" height="697" alt="image" src="https://github.com/user-attachments/assets/b2ed7868-40bd-4411-972a-5f881abf86c4" />
+
 
 ---
 
